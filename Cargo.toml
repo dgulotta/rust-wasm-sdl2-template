@@ -1,0 +1,16 @@
+[package]
+name = "rust-wasm-sdl2-template"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+imgui = "0.12.0"
+imgui-sdl2-support = "0.13.0"
+sdl2 = "0.37.0"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+imgui-glow-renderer = "0.13.0"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+imgui-glow-renderer = { version = "0.13.0", default-features = false, features = ["gl_extensions_support","bind_vertex_array_support","vertex_offset_support","clip_origin_support","bind_sampler_support","polygon_mode_support","primitive_restart_support"] }

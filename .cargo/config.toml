@@ -1,0 +1,4 @@
+[target.wasm32-unknown-emscripten]
+rustflags = [
+    "-C", "link-args=-sUSE_SDL=2 -s ASYNCIFY -s ALLOW_MEMORY_GROWTH=1 -sMIN_WEBGL_VERSION=2",
+]
